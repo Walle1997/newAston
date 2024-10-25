@@ -159,7 +159,7 @@ xhr.send();
  let str = "Hello world!";
 
  3. Можно использовать литерал:
- 
+
   let str = 'Farid';
   console.log(`Hello, ${name}`); // "Hello, Farid"
 
@@ -195,6 +195,14 @@ let val = null;
 ## Undefined
 1. Через прямое создание значения undefined:
 let val; // переменная была объявлена, но значение присвоено не было
+
+2. через присваивание значения undefined любой переменной:
+
+let a = 345;
+
+a = undefined;
+
+concole.log(a); // будет выведено undefined
 
 ## Symbol
 1. Создание символа через Symbol() с описанием и без него:
