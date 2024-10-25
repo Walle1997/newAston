@@ -156,11 +156,12 @@ xhr.send();
 
  2. Можно использовать двойные ковычки:
 
- let str = "Hello6 world!";
+ let str = "Hello world!";
 
  3. Можно использовать литерал:
+ 
   let str = 'Farid';
-  console.log(`Hello, ${name}`); // "Hello Farid"
+  console.log(`Hello, ${name}`); // "Hello, Farid"
 
 
 ## Number
