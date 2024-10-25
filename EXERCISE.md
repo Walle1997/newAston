@@ -83,6 +83,62 @@ HTTP версии 3.0 - это третья версия протокола пе
 
 AbortController — это интерфейс, который позволяет контролировать выполнение HTTP-запросов и других асинхронных операций, таких как fetch. Он позволяет отменять запросы, если они больше не нужны, что может быть полезно для улучшения производительности и предотвращения ненужных операций.
 
+## Использование AbortController с Fetch API
+
+### Создание экземпляра AbortController:
+ 
+const controller = new AbortController();
+const signal = controller.signal;
+
+### Отправка запроса с использованием сигнала:
+
+fetch('https://api.example.com/data', { signal })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(err => {
+        if (err.name === 'AbortError') {
+            console.log('Fetch aborted');
+        } else {
+            console.error('Fetch error:', err);
+        }
+    });
+
+### Отмена запроса:
+
+controller.abort();
+
+## Применение AbortController в асинхронных операциях
+
+Вы также можете использовать AbortController в других асинхронных операциях. Например, если вы используете XMLHttpRequest, вы можете делать это следующим образом:
+ 
+const controller = new AbortController();
+const signal = controller.signal;
+
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.example.com/data');
+
+// Обработчик события для обработки отмены
+signal.addEventListener('abort', () => {
+    xhr.abort(); // Отменяем запрос XMLHttpRequest
+});
+
+// Обработка успешного ответа
+xhr.onload = () => {
+    if (xhr.status === 200) {
+        console.log(JSON.parse(xhr.responseText));
+    }
+};
+// Отмена запроса
+controller.abort();
+xhr.send();
+
 ## Другие способы отмены запросов
 
 1. Использование таймеров: Вы можете установить таймер, по истечении которого ваш запрос будет отменен.
