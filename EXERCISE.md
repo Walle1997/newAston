@@ -164,6 +164,7 @@ xhr.send();
   console.log(`Hello, ${name}`); // "Hello, Farid"
 
 4. Через строковое преобразование:
+
 let value = true;
 value = String(value);
 console.log(typeof value); // string
@@ -185,10 +186,12 @@ const num = 3.14;
 let num = Number("1"); // 1
 
 4. Через численное преобразование:
+
 console.log("6" / "3"); // вывод в консоль будет число 2
 
 ##  Boolean
 1. Прямое присваивание значения:
+
  let str = true;
  let str1 = false;
 
@@ -197,6 +200,7 @@ let str = (1 > 0); // true
 let str = (1 < 0); // false
 
 3. Через логическое преобразование:
+
 concole.log(Boolean(1)); // true
 console.log(Boolean(0)); // false
 console.log(Boolean("Hello!")); // true
