@@ -159,7 +159,9 @@ xhr.send();
  let str = "Hello6 world!";
 
  3. Можно использовать литерал:
-  let str = `Hello, world!`;
+  let str = 'Farid';
+  console.log(`Hello, ${name}`); // "Hello Farid"
+
 
 ## Number
 1. Объявление целого чила через переменную или через константу:
