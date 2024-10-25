@@ -163,11 +163,20 @@ xhr.send();
   let str = 'Farid';
   console.log(`Hello, ${name}`); // "Hello, Farid"
 
-4. Через строковое преобразование:
+ 4. Через строковое преобразование:
 
-let value = true;
-value = String(value);
-console.log(typeof value); // string
+  let value = true;
+  value = String(value);
+  console.log(typeof value); // string
+
+ 5. Через использование .toString():
+
+  let num = 123;
+  console.log(num.toString()); // '123'
+
+ 6. С помощью использования бинарного оператора +:
+
+  console.log(1 + '2'); // '12'
 
 
 ## Number
@@ -188,6 +197,18 @@ let num = Number("1"); // 1
 4. Через численное преобразование:
 
 console.log("6" / "3"); // вывод в консоль будет число 2
+
+5. С помощью использования бинарных операторов:
+
+ console.log('6' - 2); // 4
+ console.log('6' / '2'); // 3
+
+6. С помощью использования унарного оператора + :
+
+let a = "1";
+let b = "3";
+console.log(+a + +b); // 4
+
 
 ##  Boolean
 1. Прямое присваивание значения:
