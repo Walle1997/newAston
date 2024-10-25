@@ -163,6 +163,11 @@ xhr.send();
   let str = 'Farid';
   console.log(`Hello, ${name}`); // "Hello, Farid"
 
+4. Через строковое преобразование:
+let value = true;
+value = String(value);
+console.log(typeof value); // string
+
 
 ## Number
 1. Объявление целого чила через переменную или через константу:
@@ -179,6 +184,9 @@ const num = 3.14;
 
 let num = Number("1"); // 1
 
+4. Через численное преобразование:
+console.log("6" / "3"); // вывод в консоль будет число 2
+
 ##  Boolean
 1. Прямое присваивание значения:
  let str = true;
@@ -187,6 +195,13 @@ let num = Number("1"); // 1
 2. Через логическое выражение:
 let str = (1 > 0); // true
 let str = (1 < 0); // false
+
+3. Через логическое преобразование:
+concole.log(Boolean(1)); // true
+console.log(Boolean(0)); // false
+console.log(Boolean("Hello!")); // true
+console.log(Boolean("")); // false
+console.log(Boolean(" ")); true
 
 ## Null
 1. Через прямое создание значения null:
