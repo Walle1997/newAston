@@ -209,6 +209,11 @@ let a = "1";
 let b = "3";
 console.log(+a + +b); // 4
 
+7. С помощью использования встроенных функций parseInt() и parseFloat():
+
+console.log(parseInt('123')); // 123
+console.log(parseFloat('25.11')); // 25.11
+
 
 ##  Boolean
 1. Прямое присваивание значения:
