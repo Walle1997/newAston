@@ -234,5 +234,14 @@ console.log("Текущая очередь на кассе:");
 queue.printQueue(); // Выводит: []
 
 
+// Напишем метод .bind() своими руками
 
-
+const bind = function(fn, coll) {
+    let newBind = [].slice.call(arguments, 2);
+    return function() {
+        let fnArgs = [].slice.call(arguments);
+        return fn.apply(coll, newBind.concat(fnArgs));
+    }
+}
+const bindedSum = bind(sum, {sum: 10}, 20, 30);
+bindedSum(40, 50, 60); // 210
